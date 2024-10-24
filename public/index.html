@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload ảnh lên Imgur với watermark</title>
+</head>
+<body>
+    <h1>Upload ảnh lên Imgur</h1>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required><br>
+        <input type="text" name="watermark" placeholder="Nhập watermark (tùy chọn)"><br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            if (result.status === 'success') {
+                document.getElementById('result').innerHTML = `<a href="${result.link}" target="_blank">Xem ảnh đã upload</a>`;
+            } else {
+                document.getElementById('result').textContent = 'Upload thất bại';
+            }
+        });
+    </script>
+</body>
+</html>
