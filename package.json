@@ -1,0 +1,9 @@
+{
+  "name": "Upload ảnh",
+  "version": "1.0.0",
+  "description": "Upload ảnh lên Imgur với watermark",
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.1"
+  }
+}
