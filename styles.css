@@ -28,3 +28,7 @@ body {
     background-color: #dc3545;
     border-color: #dc3545;
 }
+
+#frequencySlider {
+    accent-color: #28a745;
+}
