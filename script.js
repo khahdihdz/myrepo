@@ -18,7 +18,7 @@ playButton.addEventListener('click', () => {
 
     // Tạo Oscillator (âm thanh tần số thấp)
     oscillator = audioCtx.createOscillator();
-    oscillator.type = 'square'; // Dạng sóng
+    oscillator.type = 'square'; // Dạng sóng vuông
     oscillator.frequency.setValueAtTime(frequencySlider.value, audioCtx.currentTime); // Tần số từ slider
 
     // Kết nối Oscillator tới loa
