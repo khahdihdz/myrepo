@@ -1,9 +1,15 @@
-// Khởi tạo AudioContext
 let audioCtx;
 let oscillator;
 
 const playButton = document.getElementById('playButton');
 const stopButton = document.getElementById('stopButton');
+const frequencySlider = document.getElementById('frequencySlider');
+const frequencyValue = document.getElementById('frequencyValue');
+
+// Cập nhật giá trị hiển thị tần số khi người dùng thay đổi slider
+frequencySlider.addEventListener('input', () => {
+    frequencyValue.textContent = frequencySlider.value;
+});
 
 playButton.addEventListener('click', () => {
     if (!audioCtx) {
@@ -13,7 +19,7 @@ playButton.addEventListener('click', () => {
     // Tạo Oscillator (âm thanh tần số thấp)
     oscillator = audioCtx.createOscillator();
     oscillator.type = 'square'; // Dạng sóng
-    oscillator.frequency.setValueAtTime(165, audioCtx.currentTime); // Tần số ~ 165 Hz
+    oscillator.frequency.setValueAtTime(frequencySlider.value, audioCtx.currentTime); // Tần số từ slider
 
     // Kết nối Oscillator tới loa
     oscillator.connect(audioCtx.destination);
