@@ -1,19 +1,23 @@
+/* Định dạng chung */
 body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
 }
 
+/* Định dạng thẻ card */
 .card {
     border-radius: 10px;
     background-color: #ffffff;
     border: none;
 }
 
+/* Tiêu đề */
 .card-title {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
+/* Định dạng nút */
 .btn {
     font-size: 1rem;
     font-weight: bold;
@@ -29,6 +33,7 @@ body {
     border-color: #dc3545;
 }
 
+/* Định dạng thanh trượt */
 #frequencySlider {
     accent-color: #28a745;
 }
